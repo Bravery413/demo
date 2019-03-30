@@ -1,0 +1,36 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                            UserController.login
+GET     /hello                                       Application.hello
+GET     /deleteUser                                  Application.delete
+GET     /find                                        Application.findUser
+
+#登录/退出
+GET     /login                                       UserController.login
+GET     /loginCheck                                  UserController.loginCheck
+GET     /logout                                      UserController.logout
+
+#商品
+GET     /listProduct                                 ProductController.listAll
+*       /addP                                             ProductController.addP
+*       /addProduct/{pid}                                 ProductController.addProduct
+*       /addProduct/?                                     ProductController.addProduct
+*       /delProduct/{pid}                                  ProductController.delProduct
+*       /editProduct/{pid}                                  ProductController.editProduct
+
+
+
+
+
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}

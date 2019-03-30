@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>Dashboard Template for Bootstrap</title>
+		<!-- Bootstrap core CSS -->
+		<link href="@{'/public/static/css/bootstrap.min.css'}" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="@{'/public/static/css/dashboard.css'}" rel="stylesheet">
+		<style type="text/css">
+			/* Chart.js */
+			@-webkit-keyframes chartjs-render-animation {
+				from {
+					opacity: 0.99
+				}
+				to {
+					opacity: 1
+				}
+			}
+			@keyframes chartjs-render-animation {
+				from {
+					opacity: 0.99
+				}
+				to {
+					opacity: 1
+				}
+			}
+			.chartjs-render-monitor {
+				-webkit-animation: chartjs-render-animation 0.001s;
+				animation: chartjs-render-animation 0.001s;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--引入抽取的topbar-->
+		<!--模板名：会使用thymeleaf的前后缀配置规则进行解析-->
+		#{extends '/common/bar.html' /}
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+					<!--需要区分是员工修改还是添加；-->
+					<form action="/addProduct/${dp?.pid}" method="get">
+						<!--发送put请求修改员工数据-->
+						<!--
+						1、SpringMVC中配置HiddenHttpMethodFilter;（SpringBoot自动配置好的）
+						2、页面创建一个post表单
+						3、创建一个input项，name="_method";值就是我们指定的请求方式
+						-->
+						<input type="hidden" name="_method" value="put"/>
+						<input type="hidden" name="id">
+						<div class="form-group">
+							<label>Name</label>
+							<input name="product.pname" type="text" value="${dp?.pname}" class="form-control" placeholder="薯片" >
+						</div>
+						<div class="form-group">
+							<label>Category</label>
+							<input name="product.category" value="${dp?.category}"  type="text" class="form-control" placeholder="零食">
+						</div>
+						<div class="form-group">
+							<label>Price</label>
+							<!--提交的是部门的id-->
+							<input name="product.price" value="${dp?.price}"  type="text" class="form-control" placeholder="100">
+						</div>
+						<div class="form-group">
+							<label>Create time</label>
+							<input id="data" name="product.create_time" value="${dp?.create_time}"   type="date" class="form-control" placeholder="1970-01-01">
+						</div>
+						<button style="margin-left: 45%" type="submit"  class="btn btn-primary">添加</button>
+                        <a href="/addProduct/${dp?.pid}">提交</a>
+					</form>
+				</main>
+			</div>
+		</div>
+
+		<!-- Bootstrap core JavaScript
+    ================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script type="text/javascript" src="@{'/public/static/js/jquery-3.2.1.slim.min.js'}"></script>
+		<script type="text/javascript" src="@{'/public/static/js/popper.min.js'}"></script>
+		<script type="text/javascript" src="@{'/public/static/js/bootstrap.min.js'}"></script>
+		<!-- Icons -->
+		<script type="text/javascript" src="@{'/public/static/js/feather.min.js'}"></script>
+		<script>
+			feather.replace()
+		</script>
+	</body>
+</html>
