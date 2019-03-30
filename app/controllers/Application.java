@@ -20,6 +20,7 @@ public class Application extends Controller {
     public static void check(){
         if (session.get("user")!=null){
             render("Application/index.html");
+            System.out.println("change by bravery");
         }
     }
 
