@@ -11,7 +11,7 @@ public class BasicTest extends UnitTest {
     @Test
     public void deleteUser() throws DBException {
         ProductDao productDao = new ProductDao();
-        productDao.addProduct();
+//        productDao.addProduct();
 
     }
 
