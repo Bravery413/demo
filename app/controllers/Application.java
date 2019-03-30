@@ -21,6 +21,7 @@ public class Application extends Controller {
         if (session.get("user")!=null){
             render("Application/index.html");
             System.out.println("change by bravery");
+            System.out.println("change by bravery");
         }
     }
 
