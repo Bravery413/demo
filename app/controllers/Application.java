@@ -22,6 +22,7 @@ public class Application extends Controller {
             render("Application/index.html");
             System.out.println("change by bravery");
             System.out.println("change by bravery");
+            System.out.println("brave change something");
         }
     }
 
