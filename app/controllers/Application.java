@@ -25,6 +25,7 @@ public class Application extends Controller {
             System.out.println("change by bravery");
             System.out.println("brave change something");
             System.out.println("new Branch");
+            System.out.println("new test branch");
         }
     }
 
