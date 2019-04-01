@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>结帐示例·Bootstrap</title>
+    <title>用户注册</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/checkout/">
 
@@ -43,7 +43,7 @@
     </div>
   <div class="row" style="margin-left: 30%">
     <div class="col-md-8 order-md-1">
-      <form class="needs-validation" novalidate="">
+      <form class="required-validate" id="validation" novalidate="">
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">名字</font></font></label>
@@ -78,7 +78,7 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">验证码</font></font></label>
-            <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+            <input type="text" class="form-control" id="validate"  name="validate">
             <div class="invalid-feedback">
               Valid first name is required.
             </div>
@@ -98,27 +98,9 @@
       </form>
     </div>
   </div>
-    <script>
-      $("#changeCode").click(function(event) {
-        /* Act on the event */
-        event.preventDefault();
-        $.ajax({
-          url: url+'UserControl/changeCode',
-          data: {randomID: '${randomID}'},
-        })
-                .done(function(data) {
-                  $("#code").attr('src', url+'UserControl/captcha?id='+data.data);
-                  $("#hiddenCode").val(data.data);
-                  //console.log(data);
-                })
-                .fail(function(data) {
-                  console.log('error');
-                })
-
-      });
 
 
-    </script>
+
 
   <footer class="my-5 pt-5 text-muted text-center text-small">
     <p class="mb-1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">©2017-2019公司名称</font></font></p>

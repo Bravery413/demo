@@ -58,13 +58,17 @@ public class UserController extends Controller {
         Cache.set(id,code,"10mn");
         renderBinary(ca);
     }
-//    public static void changeCode(String randomID){
-//        Cache.delete(randomID);
-//        String ID = Codec.UUID();
-//        WebServiceBean bean = new WebServiceBean();
-//        bean.result = 0;
-//        bean.data = ID;
-//        renderJSON(bean);
-//    }
+    public static void check(String validate,String randomID) {
+        validation.equals(
+                validate, Cache.get(randomID)
+        ).message("Invalid code. Please type it again");
+        if(validation.hasErrors()) {
+            flash.put("info", "validate error");
+            resiger();
+        }
+
+    }
+
+
 
 }
