@@ -3,3 +3,6 @@
 31 三月 2019 00:06:16,691 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
 31 三月 2019 00:06:21,550 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0 for default
 31 三月 2019 00:06:22,419 INFO  ~ Application 'demo' is now started !
+01 四月 2019 15:10:08,201 INFO  ~ Starting C:\Users\bilin 009\demo\.
+01 四月 2019 15:10:09,217 WARN  ~ You're running Play! in DEV mode
+01 四月 2019 15:10:09,287 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...

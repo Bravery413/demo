@@ -9,7 +9,7 @@
     <content url="file://D:/play-1.4.2/modules/docviewer">
       <sourceFolder url="file://D:/play-1.4.2/modules/docviewer/app" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="module-library">

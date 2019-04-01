@@ -15,11 +15,14 @@ GET     /logout                                      UserController.logout
 
 #商品
 GET     /listProduct                                 ProductController.listAll
-*       /addP                                             ProductController.addP
-*       /addProduct/{pid}                                 ProductController.addProduct
-*       /addProduct/?                                     ProductController.addProduct
-*       /delProduct/{pid}                                  ProductController.delProduct
-*       /editProduct/{pid}                                  ProductController.editProduct
+*       /addP                                        ProductController.addP
+*       /addProduct/{pid}                            ProductController.addProduct
+*       /addProduct/?                                ProductController.addProduct
+*       /delProduct/{pid}                            ProductController.delProduct
+*       /editProduct/{pid}                           ProductController.editProduct
+#邮件
+*       /send                                        UserController.sendEmail
+*       /resiger                                        UserController.resiger
 
 
 
