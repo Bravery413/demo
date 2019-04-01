@@ -1,13 +1,20 @@
 package controllers;
 
 import models.User;
+import notifiers.Mails;
+import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.HtmlEmail;
 import org.apache.commons.mail.SimpleEmail;
+import play.Play;
 import play.data.validation.Required;
+import play.data.validation.URL;
 import play.libs.Mail;
 import play.mvc.Controller;
 import play.cache.*;
 import play.libs.mail.*;
+
+import static play.mvc.Mailer.*;
 
 public class UserController extends Controller {
     //跳转到登录页面
@@ -35,13 +42,11 @@ public class UserController extends Controller {
         session.clear();
         render("Application/login.html");
     }
-    public static void sendMail() throws EmailException {
-        SimpleEmail e = new SimpleEmail();
-        e.setFrom("2472937751@qq.com");
-        e.addTo("1075656423@qq.com");
-        e.setSubject("subject");
-        e.setMsg("Message");
-        Mail.send(e);
+    public static void sendEmail(){
+        Mails.welcome();
         render("Application/success.html");
+
+
     }
+
 }

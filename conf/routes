@@ -21,7 +21,7 @@ GET     /listProduct                                 ProductController.listAll
 *       /delProduct/{pid}                            ProductController.delProduct
 *       /editProduct/{pid}                           ProductController.editProduct
 #邮件
-*       /send                                        UserController.sendMail
+*       /send                                        UserController.sendEmail
 
 
 
