@@ -22,6 +22,7 @@ GET     /listProduct                                 ProductController.listAll
 *       /editProduct/{pid}                           ProductController.editProduct
 #邮件
 *       /send                                        UserController.sendEmail
+*       /resiger                                        UserController.resiger
 
 
 

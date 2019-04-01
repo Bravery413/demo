@@ -9,6 +9,8 @@ import org.apache.commons.mail.SimpleEmail;
 import play.Play;
 import play.data.validation.Required;
 import play.data.validation.URL;
+import play.libs.Codec;
+import play.libs.Images;
 import play.libs.Mail;
 import play.mvc.Controller;
 import play.cache.*;
@@ -45,8 +47,24 @@ public class UserController extends Controller {
     public static void sendEmail(){
         Mails.welcome();
         render("Application/success.html");
-
-
     }
+    public static void resiger(){
+        String randomID = Codec.UUID();
+        render("Application/resiger.html",randomID);
+    }
+    public static void captcha(String id){
+        Images.Captcha ca = Images.captcha();
+        String code = ca.getText("#E4EaFD");
+        Cache.set(id,code,"10mn");
+        renderBinary(ca);
+    }
+//    public static void changeCode(String randomID){
+//        Cache.delete(randomID);
+//        String ID = Codec.UUID();
+//        WebServiceBean bean = new WebServiceBean();
+//        bean.result = 0;
+//        bean.data = ID;
+//        renderJSON(bean);
+//    }
 
 }
